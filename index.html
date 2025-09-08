@@ -29,6 +29,32 @@
             font-size: 1.5rem;
             font-weight: 600;
         }
+        
+        .nav-bar {
+            background: #2a5298;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-bar a.active {
+            background: #00d4ff;
+            color: #1e3c72;
+        }
     </style>
     <link rel="stylesheet" href="fragments/pillar-bank-hero/src/index.css">
     <link rel="stylesheet" href="fragments/pillar-bank-services/src/index.css">
@@ -39,6 +65,10 @@
 <body>
     <div class="fragment-showcase">
         <div class="fragment-title">Pillar Bank - Liferay DXP Fragments Preview</div>
+        <div class="nav-bar">
+            <a href="index.html" class="active">Public Website</a>
+            <a href="onboarding-preview.html">Advisor Portal - Onboarding</a>
+        </div>
         
         <!-- Hero Fragment -->
         <div id="hero-fragment"></div>

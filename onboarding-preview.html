@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar Bank - Advisor Portal Onboarding Request</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f0f2f5;
+        }
+        
+        .header-nav {
+            background: #1e3c72;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-links a.active {
+            background: #00d4ff;
+            color: #1e3c72;
+        }
+    </style>
+    <link rel="stylesheet" href="fragments/pillar-bank-onboarding/src/index.css">
+</head>
+<body>
+    <div class="header-nav">
+        <div class="nav-title">🏦 Pillar Bank - Advisor Portal</div>
+        <div class="nav-links">
+            <a href="index.html">Public Website</a>
+            <a href="onboarding-preview.html" class="active">Onboarding Requests</a>
+        </div>
+    </div>
+    
+    <div id="onboarding-fragment"></div>
+    
+    <script>
+        // Load onboarding fragment
+        async function loadFragment(path, containerId) {
+            try {
+                const response = await fetch(path);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading fragment ${path}:`, error);
+                document.getElementById(containerId).innerHTML = '<p>Error loading fragment</p>';
+            }
+        }
+        
+        loadFragment('fragments/pillar-bank-onboarding/src/index.html', 'onboarding-fragment');
+    </script>
+</body>
+</html>
