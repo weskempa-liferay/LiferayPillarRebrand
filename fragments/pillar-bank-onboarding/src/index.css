@@ -1,0 +1,221 @@
+.pillar-onboarding-section {
+  background: #f8f9fa;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.onboarding-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.onboarding-title {
+  background: white;
+  padding: 30px 40px 20px;
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Document Upload Section */
+.document-upload-section {
+  padding: 30px 40px;
+  border-bottom: 1px solid #e9ecef;
+  background: #f8f9fa;
+}
+
+.upload-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.upload-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-file-btn {
+  background: #e9ecef;
+  border: 1px solid #ced4da;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #495057;
+  transition: all 0.2s ease;
+}
+
+.select-file-btn:hover {
+  background: #dee2e6;
+}
+
+.upload-instructions {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0;
+  max-width: 200px;
+}
+
+.document-status {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.document-status label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.status-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background: white;
+  font-size: 0.9rem;
+  color: #495057;
+  min-width: 150px;
+}
+
+.submit-documents-btn {
+  background: #00d4ff;
+  color: #1e3c72;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: fit-content;
+  align-self: flex-end;
+}
+
+.submit-documents-btn:hover {
+  background: #00b8e6;
+}
+
+/* Customer Information Section */
+.customer-info-section {
+  padding: 30px 40px;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.info-item.empty {
+  visibility: hidden;
+}
+
+.info-item .label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.info-item .value {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 400;
+  text-align: right;
+  word-break: break-word;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding: 20px 40px;
+  border-top: 1px solid #e9ecef;
+  background: #f8f9fa;
+}
+
+.footer-copyright p {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .onboarding-container {
+    margin: 0 10px;
+  }
+  
+  .onboarding-title,
+  .document-upload-section,
+  .customer-info-section,
+  .footer-copyright {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .upload-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .submit-documents-btn {
+    align-self: stretch;
+  }
+  
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .info-item .value {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .info-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+}
