@@ -1,0 +1,133 @@
+.pillar-history-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.history-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.history-text {
+  flex: 1;
+}
+
+.history-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: #00d4ff;
+  margin-bottom: 30px;
+}
+
+.history-description {
+  color: #6c757d;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
+
+.history-actions {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #e9ecef;
+}
+
+.history-actions h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1e3c72;
+  margin-bottom: 12px;
+}
+
+.history-actions p {
+  color: #6c757d;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #00d4ff;
+  color: #1e3c72;
+}
+
+.btn-primary:hover {
+  background: #00b8e6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #1e3c72;
+  border: 2px solid #1e3c72;
+}
+
+.btn-outline:hover {
+  background: #1e3c72;
+  color: white;
+}
+
+.history-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.history-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .history-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .history-text h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .action-buttons {
+    justify-content: center;
+  }
+  
+  .pillar-history-section {
+    padding: 60px 20px;
+  }
+}

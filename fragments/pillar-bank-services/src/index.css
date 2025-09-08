@@ -1,0 +1,83 @@
+.pillar-services-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f8ff;
+  border-radius: 50%;
+}
+
+.icon-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e3c72;
+  margin-bottom: 16px;
+}
+
+.service-card p {
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.service-link {
+  display: inline-block;
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.service-link:hover {
+  background: #00d4ff;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .pillar-services-section {
+    padding: 60px 20px;
+  }
+}

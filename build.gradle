@@ -1,0 +1,10 @@
+plugins {
+	id "com.liferay.workspace" version "4.0.9"
+}
+
+allprojects {
+	repositories {
+		mavenCentral()
+		mavenLocal()
+	}
+}

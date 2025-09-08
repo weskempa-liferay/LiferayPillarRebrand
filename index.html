@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar Bank - Liferay DXP Fragments Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .fragment-showcase {
+            margin: 0;
+        }
+        
+        .fragment-title {
+            background: #1e3c72;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    </style>
+    <link rel="stylesheet" href="fragments/pillar-bank-hero/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-services/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-security/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-history/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-footer/src/index.css">
+</head>
+<body>
+    <div class="fragment-showcase">
+        <div class="fragment-title">Pillar Bank - Liferay DXP Fragments Preview</div>
+        
+        <!-- Hero Fragment -->
+        <div id="hero-fragment"></div>
+        
+        <!-- Services Fragment -->
+        <div id="services-fragment"></div>
+        
+        <!-- Security Fragment -->
+        <div id="security-fragment"></div>
+        
+        <!-- History Fragment -->
+        <div id="history-fragment"></div>
+        
+        <!-- Footer Fragment -->
+        <div id="footer-fragment"></div>
+    </div>
+    
+    <script>
+        // Load fragments dynamically
+        async function loadFragment(path, containerId) {
+            try {
+                const response = await fetch(path);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading fragment ${path}:`, error);
+                document.getElementById(containerId).innerHTML = '<p>Error loading fragment</p>';
+            }
+        }
+        
+        // Load all fragments
+        loadFragment('fragments/pillar-bank-hero/src/index.html', 'hero-fragment');
+        loadFragment('fragments/pillar-bank-services/src/index.html', 'services-fragment');
+        loadFragment('fragments/pillar-bank-security/src/index.html', 'security-fragment');
+        loadFragment('fragments/pillar-bank-history/src/index.html', 'history-fragment');
+        loadFragment('fragments/pillar-bank-footer/src/index.html', 'footer-fragment');
+    </script>
+</body>
+</html>

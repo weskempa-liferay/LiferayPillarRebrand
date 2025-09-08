@@ -1,0 +1,13 @@
+{
+  "name": "pillar-bank-liferay-fragments",
+  "version": "1.0.0",
+  "description": "Pillar Bank Liferay DXP Fragments for professional banking website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["liferay", "fragments", "banking", "dxp"],
+  "author": "Pillar Bank Development Team",
+  "license": "MIT"
+}
