@@ -1,0 +1,8 @@
+{
+  "name": "pillar-bank-home-improvement-campaign",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "liferay-fragments-toolkit": "^1.10.1"
+  }
+}

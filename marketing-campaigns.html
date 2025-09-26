@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar Bank - Marketing Campaigns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .campaigns-header {
+            background: #1e3c72;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .campaigns-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .campaigns-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .nav-bar {
+            background: #2a5298;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-bar a.active {
+            background: #00d4ff;
+            color: #1e3c72;
+        }
+        
+        .campaigns-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .campaigns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            justify-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .campaign-section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 40px;
+        }
+        
+        .campaign-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="fragments/pillar-bank-auto-loan-campaign/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-checking-campaign/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-home-improvement-campaign/src/index.css">
+</head>
+<body>
+    <div class="campaigns-header">
+        <h1>🏦 Marketing Campaigns</h1>
+        <p>Promote our financial products with these engaging campaign fragments</p>
+    </div>
+    
+    <div class="nav-bar">
+        <a href="index.html">Public Website</a>
+        <a href="onboarding-preview.html">Advisor Portal</a>
+        <a href="dashboard-preview.html">Customer Dashboard</a>
+        <a href="marketing-campaigns.html" class="active">Marketing Campaigns</a>
+    </div>
+    
+    <div class="campaigns-container">
+        <h2 class="campaign-section-title">Financial Product Campaigns</h2>
+        <p class="campaign-description">
+            These three marketing fragments are designed with consistent sizing and professional styling to promote our key financial products. Each card can be used independently across your website for targeted marketing campaigns.
+        </p>
+        
+        <div class="campaigns-grid">
+            <div id="auto-loan-campaign"></div>
+            <div id="checking-campaign"></div>
+            <div id="home-improvement-campaign"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Load campaign fragments
+        async function loadFragment(path, containerId) {
+            try {
+                const response = await fetch(path);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading fragment ${path}:`, error);
+                document.getElementById(containerId).innerHTML = '<p>Error loading fragment</p>';
+            }
+        }
+        
+        // Load all campaign fragments
+        loadFragment('fragments/pillar-bank-auto-loan-campaign/src/index.html', 'auto-loan-campaign');
+        loadFragment('fragments/pillar-bank-checking-campaign/src/index.html', 'checking-campaign');
+        loadFragment('fragments/pillar-bank-home-improvement-campaign/src/index.html', 'home-improvement-campaign');
+    </script>
+</body>
+</html>
