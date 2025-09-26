@@ -62,6 +62,7 @@
     <link rel="stylesheet" href="fragments/pillar-bank-history/src/index.css">
     <link rel="stylesheet" href="fragments/pillar-bank-footer/src/index.css">
     <link rel="stylesheet" href="fragments/pillar-bank-onboarding/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-credit-card-dashboard/src/index.css">
 </head>
 <body>
     <div class="fragment-showcase">
@@ -69,6 +70,7 @@
         <div class="nav-bar">
             <a href="index.html" class="active">Public Website</a>
             <a href="onboarding-preview.html">Advisor Portal - Onboarding</a>
+            <a href="dashboard-preview.html">Customer Dashboard</a>
         </div>
         
         <!-- Hero Fragment -->
@@ -93,6 +95,14 @@
         
         <!-- Onboarding Fragment -->
         <div id="onboarding-fragment"></div>
+        
+        <!-- Customer Dashboard Section -->
+        <div style="background: #1e3c72; color: white; padding: 20px; text-align: center; font-size: 1.3rem; font-weight: 600; margin-top: 40px;">
+            Customer Dashboard - Credit Card Fragment
+        </div>
+        
+        <!-- Credit Card Dashboard Fragment -->
+        <div id="credit-card-dashboard-fragment"></div>
     </div>
     
     <script>
@@ -115,6 +125,7 @@
         loadFragment('fragments/pillar-bank-history/src/index.html', 'history-fragment');
         loadFragment('fragments/pillar-bank-footer/src/index.html', 'footer-fragment');
         loadFragment('fragments/pillar-bank-onboarding/src/index.html', 'onboarding-fragment');
+        loadFragment('fragments/pillar-bank-credit-card-dashboard/src/index.html', 'credit-card-dashboard-fragment');
     </script>
 </body>
 </html>

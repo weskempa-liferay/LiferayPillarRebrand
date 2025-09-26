@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar Bank - Customer Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+        
+        .dashboard-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 200px;
+            background: #1e3a5f;
+            color: white;
+            padding: 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar-header {
+            padding: 20px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: #00d4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .user-details h3 {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+        
+        .user-details p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .nav-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 15px 20px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .nav-link.active {
+            background: #00d4ff;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 200px;
+            background: white;
+        }
+        
+        .content-header {
+            background: white;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+        
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .content-body {
+            padding: 0;
+            background: #f8f9fa;
+        }
+        
+        .dashboard-sections {
+            display: grid;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .dashboard-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="fragments/pillar-bank-credit-card-dashboard/src/index.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">NP</div>
+                    <div class="user-details">
+                        <h3>Welcome,</h3>
+                        <p>Nick Peterson</p>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Payees</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Accounts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Transfers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Loan Applications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Data Refresh</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Advisor Request</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Back to Main Site</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1 class="page-title">Credit Card Dashboard</h1>
+            </div>
+            
+            <div class="content-body">
+                <div class="dashboard-sections">
+                    <!-- Credit Card Dashboard Fragment -->
+                    <div id="credit-card-dashboard-fragment"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // Load credit card dashboard fragment
+        async function loadFragment(path, containerId) {
+            try {
+                const response = await fetch(path);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading fragment ${path}:`, error);
+                document.getElementById(containerId).innerHTML = '<p>Error loading fragment</p>';
+            }
+        }
+        
+        loadFragment('fragments/pillar-bank-credit-card-dashboard/src/index.html', 'credit-card-dashboard-fragment');
+    </script>
+</body>
+</html>
