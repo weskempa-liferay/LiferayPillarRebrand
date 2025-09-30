@@ -1,10 +1,10 @@
 .pillar-credit-card-dashboard {
-  background: #f8f9fa;
+  xbackground: #f8f9fa;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.dashboard-container {
+.pillar-credit-card-dashboard .dashboard-container {
   max-width: 800px;
   margin: 0 auto;
   display: flex;
@@ -13,7 +13,7 @@
 }
 
 /* Credit Card Status Card */
-.credit-card-status-card {
+.pillar-credit-card-dashboard .credit-card-status-card {
   background: white;
   border-radius: 12px;
   padding: 24px;
@@ -21,36 +21,36 @@
   border: 1px solid #e9ecef;
 }
 
-.card-header {
+.pillar-credit-card-dashboard .card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
 }
 
-.card-icon {
+.pillar-credit-card-dashboard .card-icon {
   font-size: 2rem;
   margin-right: 16px;
 }
 
-.card-title {
+.pillar-credit-card-dashboard .card-title {
   flex: 1;
 }
 
-.card-title h3 {
+.pillar-credit-card-dashboard .card-title h3 {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1e3c72;
   margin: 0 0 4px 0;
 }
 
-.card-number {
+.pillar-credit-card-dashboard .card-number {
   font-size: 0.9rem;
   color: #6c757d;
   font-family: 'Courier New', monospace;
 }
 
-.card-status {
+.pillar-credit-card-dashboard .card-status {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -62,7 +62,7 @@
   color: #155724;
 }
 
-.status-dot {
+.pillar-credit-card-dashboard .status-dot {
   width: 8px;
   height: 8px;
   background: #28a745;
@@ -70,54 +70,56 @@
 }
 
 /* Balance Section */
-.card-balance-section {
+.pillar-credit-card-dashboard .card-balance-section {
   display: grid;
   gap: 20px;
 }
 
-.balance-info {
+.pillar-credit-card-dashboard .balance-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
-.current-balance, .credit-limit {
+.pillar-credit-card-dashboard .current-balance,
+ .pillar-credit-card-dashboard .credit-limit {
   text-align: center;
   padding: 16px;
   background: #f8f9fa;
   border-radius: 8px;
 }
 
-.balance-label, .limit-label {
+.pillar-credit-card-dashboard .balance-label,
+ .pillar-credit-card-dashboard .limit-label {
   display: block;
   font-size: 0.875rem;
   color: #6c757d;
   margin-bottom: 8px;
 }
 
-.balance-amount {
+.pillar-credit-card-dashboard .balance-amount {
   font-size: 2rem;
   font-weight: 700;
   color: #28a745;
 }
 
-.limit-amount {
+.pillar-credit-card-dashboard .limit-amount {
   font-size: 1.5rem;
   font-weight: 600;
   color: #1e3c72;
 }
 
-.utilization-bar {
+.pillar-credit-card-dashboard .utilization-bar {
   margin-top: 16px;
 }
 
-.utilization-label {
+.pillar-credit-card-dashboard .utilization-label {
   font-size: 0.875rem;
   color: #6c757d;
   margin-bottom: 8px;
 }
 
-.progress-bar {
+.pillar-credit-card-dashboard .progress-bar {
   width: 100%;
   height: 8px;
   background: #e9ecef;
@@ -126,13 +128,13 @@
   margin-bottom: 8px;
 }
 
-.progress-fill {
+.pillar-credit-card-dashboard .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
   transition: width 0.3s ease;
 }
 
-.available-credit {
+.pillar-credit-card-dashboard .available-credit {
   font-size: 0.875rem;
   color: #28a745;
   font-weight: 500;
@@ -140,27 +142,27 @@
 }
 
 /* Quick Actions */
-.quick-actions-section {
+.pillar-credit-card-dashboard .quick-actions-section {
   background: white;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-.quick-actions-section h4 {
+.pillar-credit-card-dashboard .quick-actions-section h4 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #1e3c72;
   margin-bottom: 16px;
 }
 
-.action-buttons {
+.pillar-credit-card-dashboard .action-buttons {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
 
-.action-btn {
+.pillar-credit-card-dashboard .action-btn {
   padding: 10px 20px;
   border-radius: 6px;
   border: none;
@@ -170,76 +172,76 @@
   font-size: 0.9rem;
 }
 
-.action-btn.primary {
+.pillar-credit-card-dashboard .action-btn.primary {
   background: #00d4ff;
   color: #1e3c72;
 }
 
-.action-btn.primary:hover {
+.pillar-credit-card-dashboard .action-btn.primary:hover {
   background: #00b8e6;
 }
 
-.action-btn.secondary {
+.pillar-credit-card-dashboard .action-btn.secondary {
   background: #f8f9fa;
   color: #1e3c72;
   border: 1px solid #dee2e6;
 }
 
-.action-btn.secondary:hover {
+.pillar-credit-card-dashboard .action-btn.secondary:hover {
   background: #e9ecef;
 }
 
 /* Recent Activity */
-.recent-activity-section {
+.pillar-credit-card-dashboard .recent-activity-section {
   background: white;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-.section-header {
+.pillar-credit-card-dashboard .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.section-header h4 {
+.pillar-credit-card-dashboard .section-header h4 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #1e3c72;
   margin: 0;
 }
 
-.view-all-link {
+.pillar-credit-card-dashboard .view-all-link {
   color: #00d4ff;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
 }
 
-.view-all-link:hover {
+.pillar-credit-card-dashboard .view-all-link:hover {
   text-decoration: underline;
 }
 
-.activity-list {
+.pillar-credit-card-dashboard .activity-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.activity-item {
+.pillar-credit-card-dashboard .activity-item {
   display: flex;
   align-items: center;
   padding: 12px 0;
   border-bottom: 1px solid #f1f3f4;
 }
 
-.activity-item:last-child {
+.pillar-credit-card-dashboard .activity-item:last-child {
   border-bottom: none;
 }
 
-.activity-icon {
+.pillar-credit-card-dashboard .activity-icon {
   width: 32px;
   height: 32px;
   background: #f8f9fa;
@@ -251,59 +253,59 @@
   font-size: 0.875rem;
 }
 
-.activity-details {
+.pillar-credit-card-dashboard .activity-details {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.activity-description {
+.pillar-credit-card-dashboard .activity-description {
   font-size: 0.9rem;
   color: #333;
   font-weight: 500;
 }
 
-.activity-date {
+.pillar-credit-card-dashboard .activity-date {
   font-size: 0.8rem;
   color: #6c757d;
 }
 
-.activity-amount {
+.pillar-credit-card-dashboard .activity-amount {
   font-size: 0.9rem;
   font-weight: 500;
 }
 
-.activity-amount.positive {
+.pillar-credit-card-dashboard .activity-amount.positive {
   color: #28a745;
 }
 
-.activity-amount.neutral {
+.pillar-credit-card-dashboard .activity-amount.neutral {
   color: #6c757d;
 }
 
 /* Card Benefits */
-.card-benefits-section {
+.pillar-credit-card-dashboard .card-benefits-section {
   background: white;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-.card-benefits-section h4 {
+.pillar-credit-card-dashboard .card-benefits-section h4 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #1e3c72;
   margin-bottom: 16px;
 }
 
-.benefits-grid {
+.pillar-credit-card-dashboard .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 16px;
 }
 
-.benefit-item {
+.pillar-credit-card-dashboard .benefit-item {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -312,11 +314,11 @@
   border-radius: 8px;
 }
 
-.benefit-icon {
+.pillar-credit-card-dashboard .benefit-icon {
   font-size: 1.2rem;
 }
 
-.benefit-text {
+.pillar-credit-card-dashboard .benefit-text {
   font-size: 0.875rem;
   color: #333;
   font-weight: 500;
@@ -324,29 +326,29 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .pillar-credit-card-dashboard {
+  .pillar-credit-card-dashboard .pillar-credit-card-dashboard {
     padding: 16px;
   }
   
-  .balance-info {
+  .pillar-credit-card-dashboard .balance-info {
     grid-template-columns: 1fr;
     gap: 16px;
   }
   
-  .action-buttons {
+  .pillar-credit-card-dashboard .action-buttons {
     flex-direction: column;
   }
   
-  .action-btn {
+  .pillar-credit-card-dashboard .action-btn {
     width: 100%;
     text-align: center;
   }
   
-  .benefits-grid {
+  .pillar-credit-card-dashboard .benefits-grid {
     grid-template-columns: 1fr;
   }
   
-  .card-header {
+  .pillar-credit-card-dashboard .card-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
