@@ -1,0 +1,71 @@
+<div class="pillar-freeze-card-widget">
+  <div class="widget-container">
+    <div class="widget-header">
+      <div class="header-icon">🔒</div>
+      <div class="header-content">
+        <h3>Freeze / Replace Credit Card</h3>
+        <p>Secure your card or request a replacement</p>
+      </div>
+    </div>
+    
+    <div class="widget-form">
+      <div class="form-group">
+        <label for="card-select">Select Credit Card</label>
+        <select id="card-select" class="form-control">
+          <option value="">Choose a card</option>
+          <option value="4829">Pillar Rewards Card •••• 4829</option>
+          <option value="3421">Pillar Platinum Card •••• 3421</option>
+          <option value="8765">Pillar Business Card •••• 8765</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Action</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="card-action" value="freeze" checked>
+            <span class="radio-content">
+              <strong>Freeze Card Temporarily</strong>
+              <small>You can unfreeze it anytime from your dashboard</small>
+            </span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="card-action" value="replace">
+            <span class="radio-content">
+              <strong>Request Replacement Card</strong>
+              <small>Due to loss, theft, or damage</small>
+            </span>
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group reason-group" style="display: none;">
+        <label for="replacement-reason">Reason for Replacement</label>
+        <select id="replacement-reason" class="form-control">
+          <option value="">Select a reason</option>
+          <option value="lost">Card Lost</option>
+          <option value="stolen">Card Stolen</option>
+          <option value="damaged">Card Damaged</option>
+          <option value="compromised">Security Compromised</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="additional-notes">Additional Notes (Optional)</label>
+        <textarea id="additional-notes" class="form-control" rows="3" placeholder="Provide any additional information..."></textarea>
+      </div>
+      
+      <div class="form-actions">
+        <button class="btn-widget primary">Submit Request</button>
+        <button class="btn-widget secondary">Cancel</button>
+      </div>
+    </div>
+    
+    <div class="widget-footer">
+      <div class="info-note warning">
+        <span class="info-icon">⚠️</span>
+        <span>Freezing your card will prevent all transactions until unfrozen</span>
+      </div>
+    </div>
+  </div>
+</div>

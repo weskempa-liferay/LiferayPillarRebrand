@@ -1,0 +1,63 @@
+<div class="pillar-query-account-widget">
+  <div class="widget-container">
+    <div class="widget-header">
+      <div class="header-icon">📊</div>
+      <div class="header-content">
+        <h3>Query Account Details</h3>
+        <p>View comprehensive information about your accounts</p>
+      </div>
+    </div>
+    
+    <div class="widget-form">
+      <div class="form-group">
+        <label for="account-type">Account Type</label>
+        <select id="account-type" class="form-control">
+          <option value="">Select Account Type</option>
+          <option value="checking">Checking Account</option>
+          <option value="savings">Savings Account</option>
+          <option value="credit">Credit Card</option>
+          <option value="loan">Loan Account</option>
+          <option value="investment">Investment Account</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="account-number">Account Number (Optional)</label>
+        <input type="text" id="account-number" class="form-control" placeholder="Enter account number">
+      </div>
+      
+      <div class="form-group">
+        <label for="query-type">Information Needed</label>
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" checked> Current Balance
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" checked> Recent Transactions
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox"> Account Statements
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox"> Interest Rates
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox"> Account Limits
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-actions">
+        <button class="btn-widget primary">View Account Details</button>
+        <button class="btn-widget secondary">Export to PDF</button>
+      </div>
+    </div>
+    
+    <div class="widget-footer">
+      <div class="info-note">
+        <span class="info-icon">ℹ️</span>
+        <span>Account information is updated in real-time</span>
+      </div>
+    </div>
+  </div>
+</div>

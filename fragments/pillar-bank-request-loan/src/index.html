@@ -1,0 +1,81 @@
+<div class="pillar-request-loan-widget">
+  <div class="widget-container">
+    <div class="widget-header">
+      <div class="header-icon">💰</div>
+      <div class="header-content">
+        <h3>Request Consumer Loan</h3>
+        <p>Apply for personal, auto, or home improvement loans</p>
+      </div>
+    </div>
+    
+    <div class="widget-form">
+      <div class="form-group">
+        <label for="loan-type">Loan Type</label>
+        <select id="loan-type" class="form-control">
+          <option value="">Select Loan Type</option>
+          <option value="personal">Personal Loan</option>
+          <option value="auto">Auto Loan</option>
+          <option value="home-improvement">Home Improvement Loan</option>
+          <option value="debt-consolidation">Debt Consolidation</option>
+        </select>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="loan-amount">Loan Amount</label>
+          <div class="input-with-prefix">
+            <span class="prefix">$</span>
+            <input type="number" id="loan-amount" class="form-control" placeholder="0.00" min="1000" max="100000">
+          </div>
+        </div>
+        
+        <div class="form-group half">
+          <label for="loan-term">Loan Term</label>
+          <select id="loan-term" class="form-control">
+            <option value="">Select Term</option>
+            <option value="12">12 months</option>
+            <option value="24">24 months</option>
+            <option value="36">36 months</option>
+            <option value="48">48 months</option>
+            <option value="60">60 months</option>
+            <option value="84">84 months</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="loan-purpose">Loan Purpose</label>
+        <textarea id="loan-purpose" class="form-control" rows="2" placeholder="Brief description of how you'll use the loan..."></textarea>
+      </div>
+      
+      <div class="estimated-payment">
+        <div class="payment-info">
+          <span class="payment-label">Estimated Monthly Payment:</span>
+          <span class="payment-amount">$0.00</span>
+        </div>
+        <div class="payment-details">
+          <small>Based on 5.99% APR (subject to credit approval)</small>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="checkbox-label agreement">
+          <input type="checkbox">
+          <span>I authorize Pillar Bank to review my credit report and financial information</span>
+        </label>
+      </div>
+      
+      <div class="form-actions">
+        <button class="btn-widget primary">Submit Loan Request</button>
+        <button class="btn-widget secondary">Save Draft</button>
+      </div>
+    </div>
+    
+    <div class="widget-footer">
+      <div class="info-note">
+        <span class="info-icon">📋</span>
+        <span>Loan applications are typically reviewed within 24-48 hours</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar Bank - Customer Portal Processes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .portal-header {
+            background: #1e3c72;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .portal-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .portal-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .nav-bar {
+            background: #2a5298;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-bar a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-bar a.active {
+            background: #00d4ff;
+            color: #1e3c72;
+        }
+        
+        .processes-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .process-section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+        
+        .process-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .processes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .processes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portal-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="fragments/pillar-bank-query-account/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-freeze-card/src/index.css">
+    <link rel="stylesheet" href="fragments/pillar-bank-request-loan/src/index.css">
+</head>
+<body>
+    <div class="portal-header">
+        <h1>🔐 Customer Portal Processes</h1>
+        <p>Self-service tools for managing your banking needs</p>
+    </div>
+    
+    <div class="nav-bar">
+        <a href="index.html">Public Website</a>
+        <a href="onboarding-preview.html">Advisor Portal</a>
+        <a href="dashboard-preview.html">Customer Dashboard</a>
+        <a href="marketing-campaigns.html">Marketing Campaigns</a>
+        <a href="portal-processes.html" class="active">Portal Processes</a>
+    </div>
+    
+    <div class="processes-container">
+        <h2 class="process-section-title">Customer Self-Service Widgets</h2>
+        <p class="process-description">
+            These interactive fragments enable customers to perform essential banking tasks directly from their portal. Each widget includes validation, user guidance, and secure form handling.
+        </p>
+        
+        <div class="processes-grid">
+            <div id="query-account-fragment"></div>
+            <div id="freeze-card-fragment"></div>
+        </div>
+        
+        <div class="processes-grid">
+            <div id="request-loan-fragment"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Load process fragments
+        async function loadFragment(path, containerId) {
+            try {
+                const response = await fetch(path);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading fragment ${path}:`, error);
+                document.getElementById(containerId).innerHTML = '<p>Error loading fragment</p>';
+            }
+        }
+        
+        // Load all process fragments
+        loadFragment('fragments/pillar-bank-query-account/src/index.html', 'query-account-fragment');
+        loadFragment('fragments/pillar-bank-freeze-card/src/index.html', 'freeze-card-fragment');
+        loadFragment('fragments/pillar-bank-request-loan/src/index.html', 'request-loan-fragment');
+        
+        // Add interaction for freeze/replace card radio buttons
+        setTimeout(() => {
+            const radioButtons = document.querySelectorAll('input[name="card-action"]');
+            const reasonGroup = document.querySelector('.reason-group');
+            
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    if (reasonGroup) {
+                        if (e.target.value === 'replace') {
+                            reasonGroup.style.display = 'block';
+                        } else {
+                            reasonGroup.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        }, 500);
+    </script>
+</body>
+</html>
