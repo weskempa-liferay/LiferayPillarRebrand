@@ -1,10 +1,10 @@
-.pillar-request-loan-widget {
+.pillar-request-loan-widget .pillar-request-loan-widget {
   background: #f8f9fa;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.widget-container {
+.pillar-request-loan-widget .widget-container {
   max-width: 600px;
   background: white;
   border-radius: 12px;
@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-.widget-header {
+.pillar-request-loan-widget .widget-header {
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
   color: white;
   padding: 24px;
@@ -21,31 +21,31 @@
   gap: 16px;
 }
 
-.header-icon {
+.pillar-request-loan-widget .header-icon {
   font-size: 2.5rem;
 }
 
-.header-content h3 {
+.pillar-request-loan-widget .header-content h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 4px 0;
 }
 
-.header-content p {
+.pillar-request-loan-widget .header-content p {
   margin: 0;
   opacity: 0.9;
   font-size: 0.9rem;
 }
 
-.widget-form {
+.pillar-request-loan-widget .widget-form {
   padding: 24px;
 }
 
-.form-group {
+.pillar-request-loan-widget .form-group {
   margin-bottom: 20px;
 }
 
-.form-group label {
+.pillar-request-loan-widget .form-group label {
   display: block;
   font-weight: 500;
   color: #333;
@@ -53,7 +53,7 @@
   font-size: 0.9rem;
 }
 
-.form-control {
+.pillar-request-loan-widget .form-control {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #ced4da;
@@ -63,29 +63,29 @@
   transition: border-color 0.2s ease;
 }
 
-.form-control:focus {
+.pillar-request-loan-widget .form-control:focus {
   outline: none;
   border-color: #28a745;
   box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
 }
 
-.form-row {
+.pillar-request-loan-widget .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
-.form-group.half {
+.pillar-request-loan-widget .form-group.half {
   margin-bottom: 0;
 }
 
-.input-with-prefix {
+.pillar-request-loan-widget .input-with-prefix {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.input-with-prefix .prefix {
+.pillar-request-loan-widget .input-with-prefix .prefix {
   position: absolute;
   left: 12px;
   color: #6c757d;
@@ -93,16 +93,16 @@
   pointer-events: none;
 }
 
-.input-with-prefix .form-control {
+.pillar-request-loan-widget .input-with-prefix .form-control {
   padding-left: 28px;
 }
 
-textarea.form-control {
+.pillar-request-loan-widget textarea.form-control {
   resize: vertical;
   min-height: 60px;
 }
 
-.estimated-payment {
+.pillar-request-loan-widget .estimated-payment {
   background: #e7f5e9;
   border: 2px solid #28a745;
   border-radius: 8px;
@@ -110,26 +110,26 @@ textarea.form-control {
   margin: 20px 0;
 }
 
-.payment-info {
+.pillar-request-loan-widget .payment-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 4px;
 }
 
-.payment-label {
+.pillar-request-loan-widget .payment-label {
   font-weight: 500;
   color: #333;
   font-size: 0.95rem;
 }
 
-.payment-amount {
+.pillar-request-loan-widget .payment-amount {
   font-size: 1.5rem;
   font-weight: 700;
   color: #28a745;
 }
 
-.payment-details {
+.pillar-request-loan-widget .payment-details {
   text-align: right;
 }
 
@@ -138,7 +138,7 @@ textarea.form-control {
   font-size: 0.8rem;
 }
 
-.checkbox-label.agreement {
+.pillar-request-loan-widget .checkbox-label.agreement {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -149,20 +149,20 @@ textarea.form-control {
   font-weight: 400;
 }
 
-.checkbox-label.agreement input[type="checkbox"] {
+.pillar-request-loan-widget .checkbox-label.agreement input[type="checkbox"] {
   margin-top: 2px;
   width: 18px;
   height: 18px;
   cursor: pointer;
 }
 
-.form-actions {
+.pillar-request-loan-widget .form-actions {
   display: flex;
   gap: 12px;
   margin-top: 24px;
 }
 
-.btn-widget {
+.pillar-request-loan-widget .btn-widget {
   flex: 1;
   padding: 12px 20px;
   border-radius: 6px;
@@ -173,33 +173,33 @@ textarea.form-control {
   border: none;
 }
 
-.btn-widget.primary {
+.pillar-request-loan-widget .btn-widget.primary {
   background: #28a745;
   color: white;
 }
 
-.btn-widget.primary:hover {
+.pillar-request-loan-widget .btn-widget.primary:hover {
   background: #218838;
   transform: translateY(-1px);
 }
 
-.btn-widget.secondary {
+.pillar-request-loan-widget .btn-widget.secondary {
   background: #f8f9fa;
   color: #333;
   border: 1px solid #dee2e6;
 }
 
-.btn-widget.secondary:hover {
+.pillar-request-loan-widget .btn-widget.secondary:hover {
   background: #e9ecef;
 }
 
-.widget-footer {
+.pillar-request-loan-widget .widget-footer {
   padding: 16px 24px;
   background: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
 
-.info-note {
+.pillar-request-loan-widget .info-note {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -207,33 +207,33 @@ textarea.form-control {
   color: #6c757d;
 }
 
-.info-icon {
+.pillar-request-loan-widget .info-icon {
   font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
-  .pillar-request-loan-widget {
+  .pillar-request-loan-widget .pillar-request-loan-widget {
     padding: 10px;
   }
   
-  .widget-header {
+  .pillar-request-loan-widget .widget-header {
     padding: 20px;
   }
   
-  .widget-form {
+  .pillar-request-loan-widget .widget-form {
     padding: 20px;
   }
   
-  .form-row {
+  .pillar-request-loan-widget .form-row {
     grid-template-columns: 1fr;
     gap: 20px;
   }
   
-  .form-group.half {
+  .pillar-request-loan-widget .form-group.half {
     margin-bottom: 20px;
   }
   
-  .form-actions {
+  .pillar-request-loan-widget .form-actions {
     flex-direction: column;
   }
 }

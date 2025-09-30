@@ -1,10 +1,10 @@
-.pillar-freeze-card-widget {
+.pillar-freeze-card-widget .pillar-freeze-card-widget {
   background: #f8f9fa;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.widget-container {
+.pillar-freeze-card-widget .widget-container {
   max-width: 600px;
   background: white;
   border-radius: 12px;
@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-.widget-header {
+.pillar-freeze-card-widget .widget-header {
   background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   color: white;
   padding: 24px;
@@ -21,31 +21,31 @@
   gap: 16px;
 }
 
-.header-icon {
+.pillar-freeze-card-widget .header-icon {
   font-size: 2.5rem;
 }
 
-.header-content h3 {
+.pillar-freeze-card-widget .header-content h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 4px 0;
 }
 
-.header-content p {
+.pillar-freeze-card-widget .header-content p {
   margin: 0;
   opacity: 0.9;
   font-size: 0.9rem;
 }
 
-.widget-form {
+.pillar-freeze-card-widget .widget-form {
   padding: 24px;
 }
 
-.form-group {
+.pillar-freeze-card-widget .form-group {
   margin-bottom: 20px;
 }
 
-.form-group label {
+.pillar-freeze-card-widget .form-group label {
   display: block;
   font-weight: 500;
   color: #333;
@@ -53,7 +53,7 @@
   font-size: 0.9rem;
 }
 
-.form-control {
+.pillar-freeze-card-widget .form-control {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #ced4da;
@@ -63,19 +63,19 @@
   transition: border-color 0.2s ease;
 }
 
-.form-control:focus {
+.pillar-freeze-card-widget .form-control:focus {
   outline: none;
   border-color: #dc3545;
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
 }
 
-.radio-group {
+.pillar-freeze-card-widget .radio-group {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.radio-label {
+.pillar-freeze-card-widget .radio-label {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -86,50 +86,50 @@
   transition: all 0.2s ease;
 }
 
-.radio-label:hover {
+.pillar-freeze-card-widget .radio-label:hover {
   border-color: #dc3545;
   background: #fff5f5;
 }
 
-.radio-label input[type="radio"] {
+.pillar-freeze-card-widget .radio-label input[type="radio"] {
   margin-top: 3px;
   width: 18px;
   height: 18px;
   cursor: pointer;
 }
 
-.radio-label input[type="radio"]:checked + .radio-content {
+.pillar-freeze-card-widget .radio-label input[type="radio"]:checked + .radio-content {
   color: #dc3545;
 }
 
-.radio-content {
+.pillar-freeze-card-widget .radio-content {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.radio-content strong {
+.pillar-freeze-card-widget .radio-content strong {
   font-size: 0.95rem;
   color: #333;
 }
 
-.radio-content small {
+.pillar-freeze-card-widget .radio-content small {
   font-size: 0.8rem;
   color: #6c757d;
 }
 
-textarea.form-control {
+.pillar-freeze-card-widget textarea.form-control {
   resize: vertical;
   min-height: 80px;
 }
 
-.form-actions {
+.pillar-freeze-card-widget .form-actions {
   display: flex;
   gap: 12px;
   margin-top: 24px;
 }
 
-.btn-widget {
+.pillar-freeze-card-widget .btn-widget {
   flex: 1;
   padding: 12px 20px;
   border-radius: 6px;
@@ -140,33 +140,33 @@ textarea.form-control {
   border: none;
 }
 
-.btn-widget.primary {
+.pillar-freeze-card-widget .btn-widget.primary {
   background: #dc3545;
   color: white;
 }
 
-.btn-widget.primary:hover {
+.pillar-freeze-card-widget .btn-widget.primary:hover {
   background: #c82333;
   transform: translateY(-1px);
 }
 
-.btn-widget.secondary {
+.pillar-freeze-card-widget .btn-widget.secondary {
   background: #f8f9fa;
   color: #333;
   border: 1px solid #dee2e6;
 }
 
-.btn-widget.secondary:hover {
+.pillar-freeze-card-widget .btn-widget.secondary:hover {
   background: #e9ecef;
 }
 
-.widget-footer {
+.pillar-freeze-card-widget .widget-footer {
   padding: 16px 24px;
   background: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
 
-.info-note {
+.pillar-freeze-card-widget .info-note {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -174,7 +174,7 @@ textarea.form-control {
   color: #6c757d;
 }
 
-.info-note.warning {
+.pillar-freeze-card-widget .info-note.warning {
   color: #856404;
   background: #fff3cd;
   padding: 12px;
@@ -182,24 +182,24 @@ textarea.form-control {
   border-left: 4px solid #ffc107;
 }
 
-.info-icon {
+.pillar-freeze-card-widget .info-icon {
   font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
-  .pillar-freeze-card-widget {
+  .pillar-freeze-card-widget .pillar-freeze-card-widget {
     padding: 10px;
   }
   
-  .widget-header {
+  .pillar-freeze-card-widget .widget-header {
     padding: 20px;
   }
   
-  .widget-form {
+  .pillar-freeze-card-widget .widget-form {
     padding: 20px;
   }
   
-  .form-actions {
+  .pillar-freeze-card-widget .form-actions {
     flex-direction: column;
   }
 }
