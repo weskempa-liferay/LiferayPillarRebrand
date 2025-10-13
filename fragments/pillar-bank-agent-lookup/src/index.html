@@ -1,0 +1,256 @@
+<div class="pillar-agent-lookup-widget">
+  <div class="widget-container">
+    <div class="widget-header">
+      <div class="header-icon">👤</div>
+      <div class="header-content">
+        <h3>Find an Agent</h3>
+        <p>Search for available agents by name</p>
+      </div>
+    </div>
+    
+    <div class="widget-body">
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="agent-search-input" 
+            class="search-input" 
+            placeholder="Type agent name (e.g., Peter)..."
+            autocomplete="off"
+          >
+          <span class="loading-spinner" style="display: none;">⏳</span>
+        </div>
+        
+        <div id="agent-results" class="results-dropdown" style="display: none;">
+          <div class="results-list" id="results-list">
+            <!-- Results will be populated here -->
+          </div>
+        </div>
+        
+        <div id="no-results" class="no-results" style="display: none;">
+          <span class="info-icon">ℹ️</span>
+          <span>No agents found. Try a different search term.</span>
+        </div>
+        
+        <div id="error-message" class="error-message" style="display: none;">
+          <span class="error-icon">⚠️</span>
+          <span id="error-text">Error loading agents. Please try again.</span>
+        </div>
+      </div>
+      
+      <div id="selected-agent" class="selected-agent" style="display: none;">
+        <div class="selected-label">Selected Agent:</div>
+        <div class="selected-info">
+          <div class="agent-avatar" id="selected-avatar">👤</div>
+          <div class="agent-details">
+            <div class="agent-name" id="selected-name">-</div>
+            <div class="agent-email" id="selected-email">-</div>
+          </div>
+          <button class="clear-selection" id="clear-agent">✕</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="widget-footer">
+      <div class="info-note">
+        <span class="info-icon">💡</span>
+        <span>Start typing to search for agents in real-time</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const searchInput = document.getElementById('agent-search-input');
+  const resultsDropdown = document.getElementById('agent-results');
+  const resultsList = document.getElementById('results-list');
+  const noResults = document.getElementById('no-results');
+  const errorMessage = document.getElementById('error-message');
+  const errorText = document.getElementById('error-text');
+  const loadingSpinner = document.querySelector('.loading-spinner');
+  const selectedAgentDiv = document.getElementById('selected-agent');
+  const clearAgentBtn = document.getElementById('clear-agent');
+  
+  let debounceTimer;
+  let selectedAgent = null;
+  let currentAbortController = null;
+  let latestSearchTerm = '';
+  
+  // API Configuration
+  const API_ENDPOINT = '/o/headless-admin-user/v1.0/user-groups/35615/user-group-users';
+  
+  // Debounced search function
+  function debounceSearch(searchTerm) {
+    clearTimeout(debounceTimer);
+    latestSearchTerm = searchTerm;
+    
+    if (searchTerm.length < 2) {
+      hideResults();
+      if (currentAbortController) {
+        currentAbortController.abort();
+        currentAbortController = null;
+      }
+      return;
+    }
+    
+    loadingSpinner.style.display = 'inline-block';
+    
+    debounceTimer = setTimeout(() => {
+      searchAgents(searchTerm);
+    }, 300); // 300ms debounce delay
+  }
+  
+  // Search agents via API
+  async function searchAgents(searchTerm) {
+    // Abort previous request if still pending
+    if (currentAbortController) {
+      currentAbortController.abort();
+    }
+    
+    currentAbortController = new AbortController();
+    
+    try {
+      hideResults();
+      errorMessage.style.display = 'none';
+      
+      const response = await fetch(
+        `${API_ENDPOINT}?search=${encodeURIComponent(searchTerm)}`,
+        { signal: currentAbortController.signal }
+      );
+      
+      if (!response.ok) {
+        throw new Error(`API Error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      // Only update results if this is still the latest search
+      if (searchTerm === latestSearchTerm) {
+        loadingSpinner.style.display = 'none';
+        
+        if (data.items && data.items.length > 0) {
+          displayResults(data.items);
+        } else {
+          showNoResults();
+        }
+      }
+    } catch (error) {
+      // Ignore abort errors
+      if (error.name === 'AbortError') {
+        return;
+      }
+      
+      console.error('Error fetching agents:', error);
+      if (searchTerm === latestSearchTerm) {
+        loadingSpinner.style.display = 'none';
+        showError(error.message);
+      }
+    }
+  }
+  
+  // Display search results
+  function displayResults(agents) {
+    resultsList.innerHTML = '';
+    
+    agents.forEach(agent => {
+      const resultItem = document.createElement('div');
+      resultItem.className = 'result-item';
+      resultItem.innerHTML = `
+        <div class="agent-avatar">👤</div>
+        <div class="agent-info">
+          <div class="agent-name">${escapeHtml(agent.name || 'Unknown')}</div>
+          <div class="agent-email">${escapeHtml(agent.emailAddress || 'No email')}</div>
+        </div>
+      `;
+      
+      resultItem.addEventListener('click', () => selectAgent(agent));
+      resultsList.appendChild(resultItem);
+    });
+    
+    resultsDropdown.style.display = 'block';
+    noResults.style.display = 'none';
+  }
+  
+  // Show no results message
+  function showNoResults() {
+    resultsDropdown.style.display = 'none';
+    noResults.style.display = 'flex';
+  }
+  
+  // Show error message
+  function showError(message) {
+    resultsDropdown.style.display = 'none';
+    noResults.style.display = 'none';
+    errorText.textContent = message;
+    errorMessage.style.display = 'flex';
+  }
+  
+  // Hide all results
+  function hideResults() {
+    resultsDropdown.style.display = 'none';
+    noResults.style.display = 'none';
+    errorMessage.style.display = 'none';
+  }
+  
+  // Select an agent
+  function selectAgent(agent) {
+    selectedAgent = agent;
+    searchInput.value = agent.name || '';
+    
+    document.getElementById('selected-name').textContent = agent.name || 'Unknown';
+    document.getElementById('selected-email').textContent = agent.emailAddress || 'No email';
+    
+    selectedAgentDiv.style.display = 'block';
+    hideResults();
+    loadingSpinner.style.display = 'none';
+    
+    // Trigger custom event for parent components
+    const event = new CustomEvent('agentSelected', { 
+      detail: { agent: agent }
+    });
+    document.dispatchEvent(event);
+  }
+  
+  // Clear selected agent
+  function clearAgent() {
+    selectedAgent = null;
+    searchInput.value = '';
+    selectedAgentDiv.style.display = 'none';
+    searchInput.focus();
+  }
+  
+  // Escape HTML to prevent XSS
+  function escapeHtml(text) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
+  }
+  
+  // Event listeners
+  searchInput.addEventListener('input', (e) => {
+    debounceSearch(e.target.value);
+  });
+  
+  searchInput.addEventListener('focus', () => {
+    if (searchInput.value.length >= 2) {
+      debounceSearch(searchInput.value);
+    }
+  });
+  
+  clearAgentBtn.addEventListener('click', clearAgent);
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container') && !e.target.closest('.selected-agent')) {
+      hideResults();
+    }
+  });
+})();
+</script>

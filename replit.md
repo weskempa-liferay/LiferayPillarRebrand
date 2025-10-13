@@ -34,6 +34,7 @@ The application uses vanilla CSS with modern features including CSS Grid, Flexbo
 ### Liferay DXP Integration
 - **liferay-fragments-toolkit**: Development dependency used across all fragments for Liferay DXP integration and deployment
 - Fragment structure follows Liferay DXP standards for seamless deployment to Liferay environments
+- **Headless Admin User API**: Agent lookup widget integrates with Liferay's headless API for real-time user search
 
 ### Asset Management
 - **Image Assets**: External image hosting through Liferay cloud infrastructure (webserver-lctfsidemocam-prd.lfr.cloud)
@@ -48,3 +49,4 @@ The application uses vanilla CSS with modern features including CSS Grid, Flexbo
 - Standard web technologies (HTML5, CSS3, vanilla JavaScript)
 - No frontend frameworks or build tools beyond the Liferay fragments toolkit
 - Simple package.json structure for each fragment component
+- Modern browser APIs (Fetch, AbortController) for API integration with race condition prevention
