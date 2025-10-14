@@ -115,13 +115,13 @@
       hideResults();
       errorMessage.style.display = 'none';
       
-      const response = await fetch(
-        `${API_ENDPOINT}?search=${encodeURIComponent(searchTerm)}`,
+      const response = await Liferay.Util.fetch(
+        API_ENDPOINT + `?search=` + encodeURIComponent(searchTerm) ,
         { signal: currentAbortController.signal }
       );
       
       if (!response.ok) {
-        throw new Error(`API Error: ${response.status}`);
+        throw new Error(`API Error: ` + response.status );
       }
       
       const data = await response.json();
@@ -160,8 +160,8 @@
       resultItem.innerHTML = `
         <div class="agent-avatar">👤</div>
         <div class="agent-info">
-          <div class="agent-name">${escapeHtml(agent.name || 'Unknown')}</div>
-          <div class="agent-email">${escapeHtml(agent.emailAddress || 'No email')}</div>
+          <div class="agent-name">`+ escapeHtml(agent.name || 'Unknown') + `</div>
+          <div class="agent-email">` + escapeHtml(agent.emailAddress || 'No email') + `</div>
         </div>
       `;
       

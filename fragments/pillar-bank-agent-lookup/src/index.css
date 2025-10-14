@@ -4,7 +4,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.widget-container {
+.pillar-agent-lookup-widget .widget-container {
   max-width: 600px;
   background: white;
   border-radius: 12px;
@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-.widget-header {
+.pillar-agent-lookup-widget .widget-header {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: white;
   padding: 24px;
@@ -21,37 +21,37 @@
   gap: 16px;
 }
 
-.header-icon {
+.pillar-agent-lookup-widget .header-icon {
   font-size: 2.5rem;
 }
 
-.header-content h3 {
+.pillar-agent-lookup-widget .header-content h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 4px 0;
 }
 
-.header-content p {
+.pillar-agent-lookup-widget .header-content p {
   margin: 0;
   opacity: 0.9;
   font-size: 0.9rem;
 }
 
-.widget-body {
+.pillar-agent-lookup-widget .widget-body {
   padding: 24px;
 }
 
-.search-container {
+.pillar-agent-lookup-widget .search-container {
   position: relative;
 }
 
-.search-input-wrapper {
+.pillar-agent-lookup-widget .search-input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.search-icon {
+.pillar-agent-lookup-widget .search-icon {
   position: absolute;
   left: 12px;
   font-size: 1.1rem;
@@ -59,7 +59,7 @@
   pointer-events: none;
 }
 
-.search-input {
+.pillar-agent-lookup-widget .search-input {
   width: 100%;
   padding: 12px 40px 12px 40px;
   border: 2px solid #e9ecef;
@@ -69,13 +69,13 @@
   transition: all 0.2s ease;
 }
 
-.search-input:focus {
+.pillar-agent-lookup-widget .search-input:focus {
   outline: none;
   border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-.loading-spinner {
+.pillar-agent-lookup-widget .loading-spinner {
   position: absolute;
   right: 12px;
   font-size: 1.1rem;
@@ -87,7 +87,7 @@
   100% { transform: rotate(360deg); }
 }
 
-.results-dropdown {
+.pillar-agent-lookup-widget .results-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -102,11 +102,11 @@
   z-index: 1000;
 }
 
-.results-list {
+.pillar-agent-lookup-widget .results-list {
   padding: 8px 0;
 }
 
-.result-item {
+.pillar-agent-lookup-widget .result-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -115,11 +115,11 @@
   transition: background 0.2s ease;
 }
 
-.result-item:hover {
+.pillar-agent-lookup-widget .result-item:hover {
   background: #f8f9fa;
 }
 
-.agent-avatar {
+.pillar-agent-lookup-widget .agent-avatar {
   width: 40px;
   height: 40px;
   background: #e9ecef;
@@ -131,12 +131,12 @@
   flex-shrink: 0;
 }
 
-.agent-info {
+.pillar-agent-lookup-widget .agent-info {
   flex: 1;
   min-width: 0;
 }
 
-.agent-name {
+.pillar-agent-lookup-widget .agent-name {
   font-weight: 500;
   color: #333;
   font-size: 0.95rem;
@@ -145,7 +145,7 @@
   text-overflow: ellipsis;
 }
 
-.agent-email {
+.pillar-agent-lookup-widget .agent-email {
   font-size: 0.85rem;
   color: #6c757d;
   white-space: nowrap;
@@ -153,7 +153,7 @@
   text-overflow: ellipsis;
 }
 
-.no-results, .error-message {
+.pillar-agent-lookup-widget .no-results, .error-message {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -163,23 +163,23 @@
   font-size: 0.9rem;
 }
 
-.no-results {
+.pillar-agent-lookup-widget .no-results {
   background: #e7f3ff;
   color: #0056b3;
   border: 1px solid #b3d9ff;
 }
 
-.error-message {
+.pillar-agent-lookup-widget .error-message {
   background: #fff3cd;
   color: #856404;
   border: 1px solid #ffeaa7;
 }
 
-.info-icon, .error-icon {
+.pillar-agent-lookup-widget .info-icon, .error-icon {
   font-size: 1.1rem;
 }
 
-.selected-agent {
+.pillar-agent-lookup-widget .selected-agent {
   margin-top: 20px;
   padding: 16px;
   background: #f0fdf4;
@@ -187,7 +187,7 @@
   border-radius: 8px;
 }
 
-.selected-label {
+.pillar-agent-lookup-widget .selected-label {
   font-size: 0.85rem;
   color: #166534;
   font-weight: 600;
@@ -196,33 +196,33 @@
   letter-spacing: 0.5px;
 }
 
-.selected-info {
+.pillar-agent-lookup-widget .selected-info {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.selected-info .agent-avatar {
+.pillar-agent-lookup-widget .selected-info .agent-avatar {
   background: #dcfce7;
   color: #166534;
 }
 
-.agent-details {
+.pillar-agent-lookup-widget .agent-details {
   flex: 1;
   min-width: 0;
 }
 
-.selected-info .agent-name {
+.pillar-agent-lookup-widget .selected-info .agent-name {
   font-size: 1rem;
   font-weight: 600;
   color: #166534;
 }
 
-.selected-info .agent-email {
+.pillar-agent-lookup-widget .selected-info .agent-email {
   color: #16a34a;
 }
 
-.clear-selection {
+.pillar-agent-lookup-widget .clear-selection {
   width: 28px;
   height: 28px;
   background: transparent;
@@ -238,17 +238,17 @@
   flex-shrink: 0;
 }
 
-.clear-selection:hover {
+.pillar-agent-lookup-widget .clear-selection:hover {
   background: #fee2e2;
 }
 
-.widget-footer {
+.pillar-agent-lookup-widget .widget-footer {
   padding: 16px 24px;
   background: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
 
-.info-note {
+.pillar-agent-lookup-widget .info-note {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -261,15 +261,15 @@
     padding: 10px;
   }
   
-  .widget-header {
+  .pillar-agent-lookup-widget .widget-header {
     padding: 20px;
   }
   
-  .widget-body {
+  .pillar-agent-lookup-widget .widget-body {
     padding: 20px;
   }
   
-  .search-input {
+  .pillar-agent-lookup-widget .search-input {
     font-size: 0.9rem;
   }
 }
